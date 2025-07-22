@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jithma Vithanage - Java Software Engineer Portfolio">
-    <meta name="author" content="Jithma Vithanage">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jithma Vithanage - Java Software Engineer</title>
-
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
     <style>
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
+            --java-orange: #f97316;
             --secondary: #0f172a;
-            --accent: #38bdf8;
             --light: #f8fafc;
             --dark: #0f172a;
             --gray: #64748b;
@@ -132,6 +125,14 @@
             color: white;
         }
 
+        .btn-java {
+            background: var(--java-orange);
+        }
+
+        .btn-java:hover {
+            background: #ea580c;
+        }
+
         /* Header & Navigation */
         header {
             position: fixed;
@@ -205,6 +206,7 @@
             padding-top: 80px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
         }
 
         .hero-content {
@@ -237,10 +239,11 @@
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             height: 500px;
-            background: linear-gradient(45deg, #e0f2fe, #dbeafe);
+            background: linear-gradient(45deg, #dbeafe, #e0f2fe);
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 15px solid white;
         }
 
         .hero-image-content {
@@ -255,8 +258,9 @@
 
         .java-icon {
             font-size: 5rem;
-            color: var(--primary);
+            color: var(--java-orange);
             margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
         }
 
         .tech-stack {
@@ -277,8 +281,14 @@
         }
 
         .tech-item.java {
-            background: linear-gradient(45deg, #f97316, #ea580c);
+            background: linear-gradient(45deg, var(--java-orange), #ea580c);
             color: white;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         /* About Section */
@@ -294,7 +304,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             height: 450px;
-            background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
         }
 
         .about-text .highlight {
@@ -378,7 +388,7 @@
         }
 
         .skill-item.java {
-            background: linear-gradient(45deg, #f97316, #ea580c);
+            background: linear-gradient(45deg, var(--java-orange), #ea580c);
             color: white;
         }
 
@@ -523,7 +533,7 @@
         }
 
         .project-tag.java {
-            background: linear-gradient(45deg, #f97316, #ea580c);
+            background: linear-gradient(45deg, var(--java-orange), #ea580c);
             color: white;
         }
 
@@ -597,57 +607,46 @@
         /* Contact Section */
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .contact-item {
             display: flex;
-            gap: 1rem;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
 
         .contact-item i {
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
             background: rgba(37, 99, 235, 0.1);
             color: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .contact-form .form-group {
+            font-size: 1.75rem;
             margin-bottom: 1.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid var(--light-gray);
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
         }
 
         /* Footer */
@@ -699,13 +698,13 @@
             }
             
             .hero-content,
-            .about-content,
-            .contact-grid {
+            .about-content {
                 grid-template-columns: 1fr;
             }
             
             .hero-image {
                 height: 400px;
+                order: -1;
             }
             
             .timeline:before {
@@ -799,13 +798,13 @@
                     <h3>Java Software Engineer</h3>
                     <p>Building scalable enterprise solutions with Java ecosystem. Transitioning from PHP/Laravel to Java with a focus on Spring Boot, microservices, and cloud-native applications.</p>
                     <div class="hero-btns">
-                        <a href="#projects" class="btn">View Projects</a>
+                        <a href="#projects" class="btn btn-java">View Projects</a>
                         <a href="#contact" class="btn btn-outline">Get In Touch</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="hero-image-content">
-                        <i class="bi bi-code-slash java-icon"></i>
+                        <i class="fab fa-java java-icon"></i>
                         <h3>Java Development</h3>
                         <p>Specializing in Spring Boot, Hibernate, Microservices Architecture</p>
                         <div class="tech-stack">
@@ -838,21 +837,21 @@
                     
                     <div class="about-info">
                         <div class="info-item">
-                            <i class="bi bi-arrow-repeat"></i>
+                            <i class="fas fa-sync-alt"></i>
                             <div>
                                 <h4>Transition Strategy</h4>
                                 <p>Repurposing PHP experience into Java expertise through academic advancement and focused projects</p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <i class="bi bi-lightning"></i>
+                            <i class="fas fa-bolt"></i>
                             <div>
                                 <h4>Key Strengths</h4>
                                 <p>Strong foundation in OOP, REST APIs, database optimization, and MVC architecture</p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <i class="bi bi-bullseye"></i>
+                            <i class="fas fa-bullseye"></i>
                             <div>
                                 <h4>Career Goal</h4>
                                 <p>Secure Java development roles to apply academic training and transferable engineering skills</p>
@@ -874,7 +873,7 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="skill-header">
-                        <i class="bi bi-filetype-java"></i>
+                        <i class="fab fa-java"></i>
                         <h3>Java Ecosystem</h3>
                     </div>
                     <div class="skill-items">
@@ -892,7 +891,7 @@
                 
                 <div class="skill-category">
                     <div class="skill-header">
-                        <i class="bi bi-code-slash"></i>
+                        <i class="fas fa-code"></i>
                         <h3>Frontend</h3>
                     </div>
                     <div class="skill-items">
@@ -909,7 +908,7 @@
                 
                 <div class="skill-category">
                     <div class="skill-header">
-                        <i class="bi bi-server"></i>
+                        <i class="fas fa-server"></i>
                         <h3>Backend & Databases</h3>
                     </div>
                     <div class="skill-items">
@@ -926,7 +925,7 @@
                 
                 <div class="skill-category">
                     <div class="skill-header">
-                        <i class="bi bi-cloud"></i>
+                        <i class="fas fa-cloud"></i>
                         <h3>DevOps & Tools</h3>
                     </div>
                     <div class="skill-items">
@@ -1009,55 +1008,55 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="bi bi-shop"></i>
+                    <div class="project-image" style="background: linear-gradient(45deg, #ffedd5, #fed7aa);">
+                        <i class="fas fa-boxes" style="color: #f97316;"></i>
                     </div>
                     <div class="project-content">
                         <span class="timeline-date">Java · Spring Boot · PostgreSQL</span>
                         <h3>Inventory Management System</h3>
-                        <p>Enterprise-grade inventory solution with role-based access control, real-time tracking, and reporting features.</p>
+                        <p>Built for learning Java concepts: CRUD operations with Java Servlets, designed relational database schema, and implemented MVC architecture.</p>
                         <div class="project-tags">
                             <div class="project-tag java">Java</div>
                             <div class="project-tag">Spring Boot</div>
                             <div class="project-tag">Hibernate</div>
-                            <div class="project-tag">JWT Auth</div>
-                            <div class="project-tag">Docker</div>
+                            <div class="project-tag">MVC</div>
+                            <div class="project-tag">PostgreSQL</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="bi bi-mortarboard"></i>
+                    <div class="project-image" style="background: linear-gradient(45deg, #dcfce7, #bbf7d0);">
+                        <i class="fas fa-graduation-cap" style="color: #16a34a;"></i>
                     </div>
                     <div class="project-content">
-                        <span class="timeline-date">Java · Microservices · React</span>
+                        <span class="timeline-date">Java · Servlets · MySQL</span>
                         <h3>Student Management System</h3>
-                        <p>Academic platform with microservices architecture for course registration, grade management, and faculty dashboards.</p>
+                        <p>Academic project implementing CRUD operations with Java Servlets, designed relational database schema, and implemented MVC architecture.</p>
                         <div class="project-tags">
                             <div class="project-tag java">Java</div>
-                            <div class="project-tag">Microservices</div>
-                            <div class="project-tag">Spring Cloud</div>
-                            <div class="project-tag">React</div>
-                            <div class="project-tag">MongoDB</div>
+                            <div class="project-tag">Servlets</div>
+                            <div class="project-tag">JSP</div>
+                            <div class="project-tag">MySQL</div>
+                            <div class="project-tag">MVC</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="bi bi-cup-hot"></i>
+                    <div class="project-image" style="background: linear-gradient(45deg, #ffedd5, #fed7aa);">
+                        <i class="fas fa-mug-hot" style="color: #f97316;"></i>
                     </div>
                     <div class="project-content">
                         <span class="timeline-date">Python · Machine Learning · FastAPI</span>
-                        <h3>Tea Sales Prediction</h3>
-                        <p>ML system using Random Forest and XGBoost with feature engineering and hyperparameter tuning.</p>
+                        <h3>SMART TEA: Sales Prediction</h3>
+                        <p>Thesis project: ML system using Random Forest (89% accuracy) with feature engineering and hyperparameter tuning.</p>
                         <div class="project-tags">
                             <div class="project-tag">Python</div>
                             <div class="project-tag">Scikit-learn</div>
                             <div class="project-tag">FastAPI</div>
+                            <div class="project-tag">Random Forest</div>
                             <div class="project-tag">Pandas</div>
-                            <div class="project-tag">NumPy</div>
                         </div>
                     </div>
                 </div>
@@ -1075,59 +1074,47 @@
             <div class="education-grid">
                 <div class="education-card">
                     <div class="education-icon">
-                        <i class="bi bi-mortarboard"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <span class="education-date">2024 - Present</span>
-                    <h3>M.Sc. in Computer Science</h3>
+                    <span class="education-date">2025 - Expected 2027</span>
+                    <h3>M.Sc. in Computer Science (SLQF-10)</h3>
                     <h4>University of Sri Jayewardenepura</h4>
                     <p>Specializing in enterprise Java development, distributed systems, and advanced algorithms.</p>
                     <div class="education-courses">
-                        <h5>Relevant Coursework:</h5>
+                        <h5>Focus Areas:</h5>
                         <ul class="course-list">
-                            <li>Advanced Java Programming</li>
-                            <li>Distributed Systems Architecture</li>
-                            <li>Cloud-Native Application Development</li>
-                            <li>Advanced Algorithms & Data Structures</li>
-                            <li>Software Architecture & Design Patterns</li>
+                            <li>Software Engineering</li>
+                            <li>Data Structures & Algorithms</li>
+                            <li>Cyber Security</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="education-card">
                     <div class="education-icon">
-                        <i class="bi bi-journal-bookmark"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
                     <span class="education-date">2020 - 2024</span>
-                    <h3>BSc(Hons) in Information Technology</h3>
-                    <h4>Sri Lanka Institute of Information Technology</h4>
-                    <p>Focused on software engineering principles, web technologies, and database systems.</p>
+                    <h3>B.Sc. in Information Technology</h3>
+                    <h4>Sri Lanka Institute of Information Technology (SLIIT)</h4>
                     <div class="education-courses">
-                        <h5>Key Achievements:</h5>
+                        <h5>Key Projects:</h5>
                         <ul class="course-list">
-                            <li>Graduated with First Class Honors</li>
-                            <li>Best Final Year Project Award</li>
-                            <li>Dean's List - 5 Semesters</li>
-                            <li>Led university coding club initiatives</li>
+                            <li>Built CRUD operations with Java Servlets</li>
+                            <li>Designed relational database schema for inventory</li>
+                            <li>Implemented MVC architecture</li>
                         </ul>
-                    </div>
-                </div>
-                
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="bi bi-award"></i>
-                    </div>
-                    <span class="education-date">Ongoing</span>
-                    <h3>Certifications</h3>
-                    <h4>Professional Development</h4>
-                    <p>Industry-recognized certifications enhancing my Java expertise.</p>
-                    <div class="education-courses">
-                        <h5>Current Certifications:</h5>
+                        
+                        <h5 style="margin-top: 1rem;">Technical Exposure:</h5>
                         <ul class="course-list">
-                            <li>Oracle Certified Professional: Java SE 17 Developer</li>
-                            <li>AWS Certified Developer - Associate</li>
-                            <li>Spring Professional Certification</li>
-                            <li>Docker Certified Associate</li>
+                            <li>Object-Oriented Programming (Java/Python)</li>
+                            <li>Database Design (MySQL, PostgreSQL)</li>
+                            <li>ML and cloud computing concepts</li>
+                            <li>Software Engineering (Agile/Scrum, CI/CD)</li>
                         </ul>
+                        
+                        <h5 style="margin-top: 1rem;">Thesis:</h5>
+                        <p>"SMART TEA: ML System for Sales Prediction" (Random Forest, 89% Accuracy)</p>
                     </div>
                 </div>
             </div>
@@ -1144,54 +1131,28 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="bi bi-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:jithma.hpy@gmail.com">jithma.hpy@gmail.com</a>
-                        </div>
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <a href="mailto:jithma.hpy@gmail.com">jithma.hpy@gmail.com</a>
                     </div>
                     
                     <div class="contact-item">
-                        <i class="bi bi-telephone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <a href="tel:+94713365783">+94 71 336 5783</a>
-                        </div>
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <a href="tel:+94713365783">+94 71 336 5783</a>
                     </div>
                     
                     <div class="contact-item">
-                        <i class="bi bi-linkedin"></i>
-                        <div>
-                            <h4>LinkedIn</h4>
-                            <a href="https://linkedin.com/in/jithma-vithanage" target="_blank">linkedin.com/in/jithma-vithanage</a>
-                        </div>
+                        <i class="fab fa-linkedin"></i>
+                        <h4>LinkedIn</h4>
+                        <a href="https://linkedin.com/in/jithma-vithanage" target="_blank">linkedin.com/in/jithma-vithanage</a>
                     </div>
                     
                     <div class="contact-item">
-                        <i class="bi bi-github"></i>
-                        <div>
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/jithma" target="_blank">github.com/jithma</a>
-                        </div>
+                        <i class="fab fa-github"></i>
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/jithma" target="_blank">github.com/jithma</a>
                     </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -1203,10 +1164,10 @@
             <div class="footer-content">
                 <div class="logo">JV</div>
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/jithma-vithanage" target="_blank"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://github.com/jithma" target="_blank"><i class="bi bi-github"></i></a>
-                    <a href="https://twitter.com/jithma" target="_blank"><i class="bi bi-twitter"></i></a>
-                    <a href="https://medium.com/@jithma" target="_blank"><i class="bi bi-medium"></i></a>
+                    <a href="https://linkedin.com/in/jithma-vithanage" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/jithma" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/jithma" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://medium.com/@jithma" target="_blank"><i class="fab fa-medium-m"></i></a>
                 </div>
                 <p>© 2024 Jithma Vithanage. All rights reserved.</p>
             </div>
