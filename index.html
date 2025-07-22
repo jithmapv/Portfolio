@@ -1,467 +1,1249 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jithma Vithanage - Java Software Engineer Portfolio">
+    <meta name="author" content="Jithma Vithanage">
+    <title>Jithma Vithanage - Java Software Engineer</title>
 
-        <meta name="description" content="Jithma Vithanage - Full Stack Software Engineer Portfolio">
-        <meta name="author" content="Jithma Vithanage">
-
-        <title>Jithma Vithanage - Software Engineer</title>
-
-        <!-- CSS FILES -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-        <link href="css/magnific-popup.css" rel="stylesheet">
-        <link href="css/templatemo-first-portfolio-style.css" rel="stylesheet">
-        
-        <style>
-            .skills-highlight {
-                background-color: rgba(83, 93, 161, 0.1);
-                padding: 60px 0;
-            }
-            .skill-card {
-                background: white;
-                border-radius: 10px;
-                padding: 25px;
-                height: 100%;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-                transition: transform 0.3s ease;
-            }
-            .skill-card:hover {
-                transform: translateY(-5px);
-            }
-            .skill-icon {
-                font-size: 2.5rem;
-                margin-bottom: 15px;
-                color: #535da1;
-            }
-            .tech-stack {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                margin-top: 20px;
-            }
-            .tech-item {
-                background: #535da1;
-                color: white;
-                padding: 5px 12px;
-                border-radius: 20px;
-                font-size: 0.8rem;
-            }
-        </style>
-    </head>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
-    <body>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #38bdf8;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --border-radius: 12px;
+        }
 
-        <section class="preloader">
-            <div class="spinner">
-                <span class="spinner-rotate"></span>    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--secondary);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--gray);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text .subheading {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 500px;
+            background: linear-gradient(45deg, #e0f2fe, #dbeafe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-image-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .java-icon {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .tech-item {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tech-item.java {
+            background: linear-gradient(45deg, #f97316, #ea580c);
+            color: white;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 450px;
+            background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+        }
+
+        .about-text .highlight {
+            background: rgba(37, 99, 235, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .about-info {
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .info-item i {
+            color: var(--primary);
+            font-size: 1.25rem;
+            min-width: 40px;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-header i {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-item {
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .skill-item.java {
+            background: linear-gradient(45deg, #f97316, #ea580c);
+            color: white;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--light-gray);
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: calc(50% - 40px);
+        }
+
+        .timeline-item:nth-child(odd) {
+            float: left;
+            clear: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            float: right;
+            clear: left;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            transform: rotate(45deg);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content:before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:before {
+            left: -10px;
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--primary);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -56px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -56px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, #dbeafe, #e0f2fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .project-tag {
+            background: #f1f5f9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-tag.java {
+            background: linear-gradient(45deg, #f97316, #ea580c);
+            color: white;
+        }
+
+        /* Education Section */
+        .education {
+            background: linear-gradient(to bottom, #f0f9ff, #e0f2fe);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .education-icon {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .education-date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-courses {
+            margin-top: 1.5rem;
+        }
+
+        .course-list {
+            list-style: none;
+        }
+
+        .course-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .course-list li:before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.75rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content,
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-image {
+                height: 400px;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                float: none;
+                clear: both;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content:before,
+            .timeline-item:nth-child(even) .timeline-content:before {
+                left: -10px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background: white;
+                width: 70%;
+                height: calc(100vh - 80px);
+                padding: 2rem;
+                transition: var(--transition);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .projects-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">JV</a>
+            <div class="mobile-toggle">
+                <i class="bi bi-list"></i>
             </div>
-        </section>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <a href="index.html" class="navbar-brand mx-auto mx-lg-0">JV</a>
-
-                <div class="d-flex align-items-center d-lg-none">
-                    <i class="navbar-icon bi-telephone-plus me-3"></i>
-                    <a class="custom-btn btn" href="#section_5">
-                        +94-713-365783
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-lg-5">
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">About</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Skills</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Projects</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_5">Contact</a>
-                        </li>
-                    </ul>
-
-                    <div class="d-lg-flex align-items-center d-none ms-auto">
-                        <i class="navbar-icon bi-telephone-plus me-3"></i>
-                        <a class="custom-btn btn" href="#section_5">
-                            +94-713-365783
-                        </a>
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="subheading">Full Stack Developer → Java Specialist</span>
+                    <h1>Jithma Vithanage</h1>
+                    <h3>Java Software Engineer</h3>
+                    <p>Building scalable enterprise solutions with Java ecosystem. Transitioning from PHP/Laravel to Java with a focus on Spring Boot, microservices, and cloud-native applications.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn">View Projects</a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
                     </div>
                 </div>
-
+                <div class="hero-image">
+                    <div class="hero-image-content">
+                        <i class="bi bi-code-slash java-icon"></i>
+                        <h3>Java Development</h3>
+                        <p>Specializing in Spring Boot, Hibernate, Microservices Architecture</p>
+                        <div class="tech-stack">
+                            <div class="tech-item java">Java</div>
+                            <div class="tech-item">Spring Boot</div>
+                            <div class="tech-item">Hibernate</div>
+                            <div class="tech-item">Microservices</div>
+                            <div class="tech-item">Docker</div>
+                            <div class="tech-item">AWS</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </div>
+    </section>
 
-        <main>
-
-            <section class="hero d-flex justify-content-center align-items-center" id="section_1">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-7 col-12">
-                            <div class="hero-text">
-                                <div class="hero-title-wrap d-flex align-items-center mb-4">
-                                    <img src="images/happy-bearded-young-man.jpg" class="avatar-image avatar-image-large img-fluid" alt="Jithma Vithanage">
-
-                                    <h1 class="hero-title ms-3 mb-0">Hello World!</h1>
-                                </div>
-
-                                <h2 class="mb-4">I'm Jithma Vithanage</h2>
-                                <h3 class="text-primary mb-4">Full Stack Software Engineer</h3>
-                                <p class="mb-4">Specializing in building robust, scalable web applications with modern technologies.</p>
-                                <p class="mb-4"><a class="custom-btn btn custom-link" href="#section_3">View My Skills</a></p>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>My journey from PHP to Java development</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image"></div>
+                <div class="about-text">
+                    <h3>Full Stack Developer transitioning to Java Ecosystem</h3>
+                    <p>With 3+ years of experience in PHP/Laravel development, I'm now leveraging my backend expertise to specialize in Java development. My background in building robust, scalable web applications provides a solid foundation for enterprise Java solutions.</p>
+                    <p>I'm passionate about creating efficient, maintainable systems using modern Java technologies. My current focus is on <span class="highlight">Spring Boot</span>, <span class="highlight">microservices architecture</span>, and <span class="highlight">cloud-native applications</span>.</p>
+                    
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="bi bi-arrow-repeat"></i>
+                            <div>
+                                <h4>Transition Strategy</h4>
+                                <p>Repurposing PHP experience into Java expertise through academic advancement and focused projects</p>
                             </div>
                         </div>
-
-                        <div class="col-lg-5 col-12 position-relative">
-                            <div class="hero-image-wrap"></div>
-                            <img src="images/portrait-happy-excited-man-holding-laptop-computer.png" class="hero-image img-fluid" alt="Jithma Vithanage coding">
-                        </div>
-
-                    </div>
-                </div>
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#535da1" fill-opacity="1" d="M0,160L24,160C48,160,96,160,144,138.7C192,117,240,75,288,64C336,53,384,75,432,106.7C480,139,528,181,576,208C624,235,672,245,720,240C768,235,816,213,864,186.7C912,160,960,128,1008,133.3C1056,139,1104,181,1152,202.7C1200,224,1248,224,1296,197.3C1344,171,1392,117,1416,90.7L1440,64L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path></svg>
-            </section>
-
-
-            <section class="about section-padding" id="section_2">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-6 col-12">
-                            <img src="images/couple-working-from-home-together-sofa.jpg" class="about-image img-fluid" alt="Jithma coding">
-                        </div>
-
-                        <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                            <div class="about-thumb">
-
-                                <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
-                                    <h2 class="text-white me-4 mb-0">About Me</h2>
-
-                                    <img src="images/happy-bearded-young-man.jpg" class="avatar-image img-fluid" alt="Jithma Vithanage">
-                                </div>
-
-                                <h3 class="pt-2 mb-3">Full Stack Software Engineer</h3>
-
-                                <p>Passionate software engineer with 3+ years of experience designing and implementing robust, scalable web applications. Proficient in both frontend and backend development with expertise in Laravel, React, and Angular.</p>
-
-                                <p>Specialized in database design, API development, and cloud integration with a strong focus on creating efficient, maintainable code following best practices in software architecture and agile methodologies.</p>
-                                
-                                <div class="mt-4">
-                                    <a href="#section_4" class="custom-btn btn">View Projects</a>
-                                </div>
+                        <div class="info-item">
+                            <i class="bi bi-lightning"></i>
+                            <div>
+                                <h4>Key Strengths</h4>
+                                <p>Strong foundation in OOP, REST APIs, database optimization, and MVC architecture</p>
                             </div>
                         </div>
-
+                        <div class="info-item">
+                            <i class="bi bi-bullseye"></i>
+                            <div>
+                                <h4>Career Goal</h4>
+                                <p>Secure Java development roles to apply academic training and transferable engineering skills</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <section class="skills-highlight" id="section_3">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8 col-12 text-center mb-5">
-                            <h2 class="mb-3">Technical Skills</h2>
-                            <p>My expertise spans across multiple technologies and frameworks</p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Skills</h2>
+                <p>My expertise spans across multiple technologies and frameworks</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <i class="bi bi-filetype-java"></i>
+                        <h3>Java Ecosystem</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item java">Java 17+</div>
+                        <div class="skill-item">Spring Boot</div>
+                        <div class="skill-item">Spring MVC</div>
+                        <div class="skill-item">Hibernate</div>
+                        <div class="skill-item">JPA</div>
+                        <div class="skill-item">JUnit 5</div>
+                        <div class="skill-item">Mockito</div>
+                        <div class="skill-item">Maven</div>
+                        <div class="skill-item">Microservices</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <i class="bi bi-code-slash"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">React</div>
+                        <div class="skill-item">Angular</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">TypeScript</div>
+                        <div class="skill-item">HTML5</div>
+                        <div class="skill-item">CSS3</div>
+                        <div class="skill-item">Bootstrap</div>
+                        <div class="skill-item">Tailwind CSS</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <i class="bi bi-server"></i>
+                        <h3>Backend & Databases</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">Laravel</div>
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">Express</div>
+                        <div class="skill-item">REST APIs</div>
+                        <div class="skill-item">PostgreSQL</div>
+                        <div class="skill-item">MySQL</div>
+                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">Database Design</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-header">
+                        <i class="bi bi-cloud"></i>
+                        <h3>DevOps & Tools</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">AWS</div>
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">GitHub</div>
+                        <div class="skill-item">CI/CD</div>
+                        <div class="skill-item">Agile/Scrum</div>
+                        <div class="skill-item">Jira</div>
+                        <div class="skill-item">Linux</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <p>My career journey and achievements</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3>Software Engineer</h3>
+                        <h4>Unitec Software Solutions</h4>
+                        <ul>
+                            <li>Developing RESTful microservices with Spring Boot for enterprise applications</li>
+                            <li>Implementing Hibernate for efficient database operations and object-relational mapping</li>
+                            <li>Containerizing applications using Docker for consistent deployment environments</li>
+                            <li>Mentoring junior developers in Java best practices and Spring ecosystem</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2024</span>
+                        <h3>Associate Software Engineer</h3>
+                        <h4>Zuse Technologies</h4>
+                        <ul>
+                            <li>Developed Lyceum Campus website with Laravel and AWS integration</li>
+                            <li>Implemented security measures with Cloudflare Turnstile</li>
+                            <li>Optimized PostgreSQL database performance for high-traffic applications</li>
+                            <li>Transitioned legacy PHP applications to modern Laravel architecture</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022</span>
+                        <h3>Intern Software Engineer</h3>
+                        <h4>SLT Digital Lab</h4>
+                        <ul>
+                            <li>Built authentication system with FastAPI and Python</li>
+                            <li>Implemented data security protocols for sensitive information</li>
+                            <li>Developed internal tools to automate network monitoring tasks</li>
+                            <li>Participated in Agile development processes and code reviews</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>My recent work showcasing Java expertise</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="bi bi-shop"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="timeline-date">Java · Spring Boot · PostgreSQL</span>
+                        <h3>Inventory Management System</h3>
+                        <p>Enterprise-grade inventory solution with role-based access control, real-time tracking, and reporting features.</p>
+                        <div class="project-tags">
+                            <div class="project-tag java">Java</div>
+                            <div class="project-tag">Spring Boot</div>
+                            <div class="project-tag">Hibernate</div>
+                            <div class="project-tag">JWT Auth</div>
+                            <div class="project-tag">Docker</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="timeline-date">Java · Microservices · React</span>
+                        <h3>Student Management System</h3>
+                        <p>Academic platform with microservices architecture for course registration, grade management, and faculty dashboards.</p>
+                        <div class="project-tags">
+                            <div class="project-tag java">Java</div>
+                            <div class="project-tag">Microservices</div>
+                            <div class="project-tag">Spring Cloud</div>
+                            <div class="project-tag">React</div>
+                            <div class="project-tag">MongoDB</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="bi bi-cup-hot"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="timeline-date">Python · Machine Learning · FastAPI</span>
+                        <h3>Tea Sales Prediction</h3>
+                        <p>ML system using Random Forest and XGBoost with feature engineering and hyperparameter tuning.</p>
+                        <div class="project-tags">
+                            <div class="project-tag">Python</div>
+                            <div class="project-tag">Scikit-learn</div>
+                            <div class="project-tag">FastAPI</div>
+                            <div class="project-tag">Pandas</div>
+                            <div class="project-tag">NumPy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+                <p>My academic background and professional development</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <span class="education-date">2024 - Present</span>
+                    <h3>M.Sc. in Computer Science</h3>
+                    <h4>University of Sri Jayewardenepura</h4>
+                    <p>Specializing in enterprise Java development, distributed systems, and advanced algorithms.</p>
+                    <div class="education-courses">
+                        <h5>Relevant Coursework:</h5>
+                        <ul class="course-list">
+                            <li>Advanced Java Programming</li>
+                            <li>Distributed Systems Architecture</li>
+                            <li>Cloud-Native Application Development</li>
+                            <li>Advanced Algorithms & Data Structures</li>
+                            <li>Software Architecture & Design Patterns</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="bi bi-journal-bookmark"></i>
+                    </div>
+                    <span class="education-date">2020 - 2024</span>
+                    <h3>BSc(Hons) in Information Technology</h3>
+                    <h4>Sri Lanka Institute of Information Technology</h4>
+                    <p>Focused on software engineering principles, web technologies, and database systems.</p>
+                    <div class="education-courses">
+                        <h5>Key Achievements:</h5>
+                        <ul class="course-list">
+                            <li>Graduated with First Class Honors</li>
+                            <li>Best Final Year Project Award</li>
+                            <li>Dean's List - 5 Semesters</li>
+                            <li>Led university coding club initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+                    <span class="education-date">Ongoing</span>
+                    <h3>Certifications</h3>
+                    <h4>Professional Development</h4>
+                    <p>Industry-recognized certifications enhancing my Java expertise.</p>
+                    <div class="education-courses">
+                        <h5>Current Certifications:</h5>
+                        <ul class="course-list">
+                            <li>Oracle Certified Professional: Java SE 17 Developer</li>
+                            <li>AWS Certified Developer - Associate</li>
+                            <li>Spring Professional Certification</li>
+                            <li>Docker Certified Associate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Interested in working together or have questions?</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:jithma.hpy@gmail.com">jithma.hpy@gmail.com</a>
                         </div>
                     </div>
                     
-                    <div class="row g-4">
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="skill-card">
-                                <div class="skill-icon bi-code-slash"></div>
-                                <h4>Frontend</h4>
-                                <p>Building responsive, interactive user interfaces</p>
-                                <div class="tech-stack">
-                                    <span class="tech-item">React</span>
-                                    <span class="tech-item">Angular</span>
-                                    <span class="tech-item">JavaScript</span>
-                                    <span class="tech-item">HTML5</span>
-                                    <span class="tech-item">CSS3</span>
-                                    <span class="tech-item">Bootstrap</span>
-                                    <span class="tech-item">Tailwind</span>
-                                </div>
-                            </div>
+                    <div class="contact-item">
+                        <i class="bi bi-telephone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+94713365783">+94 71 336 5783</a>
                         </div>
-                        
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="skill-card">
-                                <div class="skill-icon bi-server"></div>
-                                <h4>Backend</h4>
-                                <p>Developing robust server-side applications</p>
-                                <div class="tech-stack">
-                                    <span class="tech-item">Laravel</span>
-                                    <span class="tech-item">PHP</span>
-                                    <span class="tech-item">Node.js</span>
-                                    <span class="tech-item">Express</span>
-                                    <span class="tech-item">Python</span>
-                                    <span class="tech-item">FastAPI</span>
-                                    <span class="tech-item">NestJS</span>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/jithma-vithanage" target="_blank">linkedin.com/in/jithma-vithanage</a>
                         </div>
-                        
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="skill-card">
-                                <div class="skill-icon bi-database"></div>
-                                <h4>Database</h4>
-                                <p>Designing efficient data storage solutions</p>
-                                <div class="tech-stack">
-                                    <span class="tech-item">PostgreSQL</span>
-                                    <span class="tech-item">MySQL</span>
-                                    <span class="tech-item">MongoDB</span>
-                                    <span class="tech-item">SQL Server</span>
-                                    <span class="tech-item">Oracle</span>
-                                    <span class="tech-item">Schema Design</span>
-                                    <span class="tech-item">Query Opt.</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-3 col-md-6 col-12">
-                            <div class="skill-card">
-                                <div class="skill-icon bi-cloud"></div>
-                                <h4>DevOps & Tools</h4>
-                                <p>Deploying and maintaining applications</p>
-                                <div class="tech-stack">
-                                    <span class="tech-item">AWS</span>
-                                    <span class="tech-item">Cloudflare</span>
-                                    <span class="tech-item">Git</span>
-                                    <span class="tech-item">Docker</span>
-                                    <span class="tech-item">Agile</span>
-                                    <span class="tech-item">Scrum</span>
-                                    <span class="tech-item">CI/CD</span>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="bi bi-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/jithma" target="_blank">github.com/jithma</a>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="featured section-padding">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-6 col-12">
-                            <div class="profile-thumb">
-                                <div class="profile-title">
-                                    <h4 class="mb-0">Professional Journey</h4>
-                                </div>
-
-                                <div class="profile-body">
-                                    <div class="experience-item mb-4">
-                                        <h5>Software Engineer</h5>
-                                        <p class="text-muted">Unitec Software Solutions | 2025-Present</p>
-                                        <ul>
-                                            <li>Designed Restaurant Management System with PostgreSQL</li>
-                                            <li>Mentored junior developers in Laravel best practices</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="experience-item mb-4">
-                                        <h5>Associate Software Engineer</h5>
-                                        <p class="text-muted">Zuse Technologies | 2023-2024</p>
-                                        <ul>
-                                            <li>Developed Lyceum Campus website with AWS integration</li>
-                                            <li>Implemented security measures with Cloudflare</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="experience-item">
-                                        <h5>Intern Software Engineer</h5>
-                                        <p class="text-muted">SLT Digital Lab | 2022</p>
-                                        <ul>
-                                            <li>Built authentication system with FastAPI</li>
-                                            <li>Implemented data security protocols</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
                         </div>
-
-                        <div class="col-lg-6 col-12 mt-5 mt-lg-0">
-                            <div class="about-thumb">
-                                <div class="row">
-                                    <div class="col-lg-6 col-6 featured-border-bottom py-2">
-                                        <strong class="featured-numbers">10+</strong>
-                                        <p class="featured-text">Projects Completed</p>
-                                    </div>
-
-                                    <div class="col-lg-6 col-6 featured-border-start featured-border-bottom ps-5 py-2">
-                                        <strong class="featured-numbers">5</strong>
-                                        <p class="featured-text">Frameworks</p>
-                                    </div>
-
-                                    <div class="col-lg-6 col-6 pt-4">
-                                        <strong class="featured-numbers">7</strong>
-                                        <p class="featured-text">Databases</p>
-                                    </div>
-
-                                    <div class="col-lg-6 col-6 featured-border-start ps-5 pt-4">
-                                        <strong class="featured-numbers">100%</strong>
-                                        <p class="featured-text">Code Quality</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="mt-5">
-                                    <h4>Education</h4>
-                                    <div class="education-item">
-                                        <h5>BSc(Hons) in Information Technology</h5>
-                                        <p class="text-muted">Sri Lanka Institute of Information Technology | 2020-2024</p>
-                                        <p>Specialized in Information Technology with focus on software engineering principles and web technologies.</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
                         </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="projects section-padding" id="section_4">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-8 col-md-8 col-12 ms-auto">
-                            <div class="section-title-wrap d-flex justify-content-center align-items-center mb-4">
-                                <img src="images/white-desk-work-study-aesthetics.jpg" class="avatar-image img-fluid" alt="Projects">
-
-                                <h2 class="text-white ms-4 mb-0">Featured Projects</h2>
-                            </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
                         </div>
-
-                        <div class="clearfix"></div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="projects-thumb">
-                                <div class="projects-info">
-                                    <small class="projects-tag">Full Stack</small>
-                                    <h3 class="projects-title">Restaurant Management</h3>
-                                    <p>Complete system for order processing, menu management, and staff scheduling with PostgreSQL optimization.</p>
-                                    <div class="tech-tags">
-                                        <span class="badge bg-primary">Laravel</span>
-                                        <span class="badge bg-primary">PostgreSQL</span>
-                                        <span class="badge bg-primary">MVC</span>
-                                    </div>
-                                </div>
-                                <img src="images/projects/restaurant-system.jpg" class="projects-image img-fluid" alt="Restaurant Management System">
-                            </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
                         </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="projects-thumb">
-                                <div class="projects-info">
-                                    <small class="projects-tag">Machine Learning</small>
-                                    <h3 class="projects-title">Tea Sales Prediction</h3>
-                                    <p>ML system using Random Forest and XGBoost with feature engineering and hyperparameter tuning.</p>
-                                    <div class="tech-tags">
-                                        <span class="badge bg-primary">Python</span>
-                                        <span class="badge bg-primary">Scikit-learn</span>
-                                        <span class="badge bg-primary">FastAPI</span>
-                                    </div>
-                                </div>
-                                <img src="images/projects/tea-prediction.jpg" class="projects-image img-fluid" alt="Tea Sales Prediction">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="projects-thumb">
-                                <div class="projects-info">
-                                    <small class="projects-tag">Web Development</small>
-                                    <h3 class="projects-title">Lyceum Campus</h3>
-                                    <p>Educational platform with AWS S3 integration and Cloudflare Turnstile security.</p>
-                                    <div class="tech-tags">
-                                        <span class="badge bg-primary">Laravel</span>
-                                        <span class="badge bg-primary">AWS</span>
-                                        <span class="badge bg-primary">Cloudflare</span>
-                                    </div>
-                                </div>
-                                <img src="images/projects/lyceum-website.jpg" class="projects-image img-fluid" alt="Lyceum Campus Website">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact section-padding" id="section_5">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8 col-12 text-center">
-                            <h2 class="mb-4">Get In Touch</h2>
-                            <p class="mb-5">Interested in working together or have questions about my work?</p>
-                            
-                            <div class="contact-info">
-                                <div class="contact-item mb-4">
-                                    <i class="bi-envelope contact-icon me-3"></i>
-                                    <a href="mailto:jithma.hpy@gmail.com">jithma.hpy@gmail.com</a>
-                                </div>
-                                
-                                <div class="contact-item mb-4">
-                                    <i class="bi-phone contact-icon me-3"></i>
-                                    <a href="tel:+94713365783">+94-713-365783</a>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <i class="bi-linkedin contact-icon me-3"></i>
-                                    <a href="https://linkedin.com/in/jithma-vithanage" target="_blank">linkedin.com/in/jithma-vithanage</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-12 col-12">
-                        <div class="copyright-text-wrap">
-                            <p class="mb-0">
-                                <span class="copyright-text">Copyright © 2024 Jithma Vithanage. All rights reserved.</span>
-                            </p>
-                        </div>
-                    </div>
-
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
             </div>
-        </footer>
+        </div>
+    </section>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/magnific-popup-options.js"></script>
-        <script src="js/custom.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">JV</div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/jithma-vithanage" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/jithma" target="_blank"><i class="bi bi-github"></i></a>
+                    <a href="https://twitter.com/jithma" target="_blank"><i class="bi bi-twitter"></i></a>
+                    <a href="https://medium.com/@jithma" target="_blank"><i class="bi bi-medium"></i></a>
+                </div>
+                <p>© 2024 Jithma Vithanage. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    </body>
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
 </html>
