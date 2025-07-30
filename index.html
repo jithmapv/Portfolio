@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jithma Vithanage - Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -28,6 +30,7 @@
             background-color: #f9fafb;
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
@@ -190,13 +193,21 @@
             position: relative;
         }
         
-        .profile-img {
-            width: 350px;
-            height: 350px;
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
             border-radius: 50%;
-            object-fit: cover;
+            overflow: hidden;
             border: 5px solid white;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            width: 350px;
+            height: 350px;
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .hero h1 {
@@ -582,6 +593,34 @@
             color: var(--light-gray);
         }
         
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
@@ -596,6 +635,22 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
             }
             
             .mobile-menu {
@@ -640,6 +695,11 @@
             
             .right {
                 left: 0;
+            }
+            
+            .profile-img-container {
+                width: 280px;
+                height: 280px;
             }
         }
         
@@ -689,7 +749,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
+                <div class="hero-text animated">
                     <h1>Jithma Vithanage</h1>
                     <div class="subtitle">Software Engineer</div>
                     <p>Full-stack developer with 2+ years of PHP/Laravel expertise transitioning to Java ecosystem. Currently pursuing M.Sc. in Computer Science with focus on software engineering and algorithms.</p>
@@ -698,9 +758,11 @@
                         <a href="#projects" class="btn btn-outline">View Projects</a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image animated delay-1">
                     <!-- LinkedIn profile image loaded dynamically -->
-                    <img id="profile-img" class="profile-img" src="" alt="Jithma Vithanage">
+                    <div class="profile-img-container">
+                        <img id="profile-img" class="profile-img" src="https://media.licdn.com/dms/image/C5603AQFf8Ld3hxPv3g/profile-displayphoto-shrink_400_400/0/1612313660522?e=1721865600&v=beta&t=0bVlQeX4Vb9R6c_2lO8F5y3Q7K0x7v6b8y1v3jX7J4Y" alt="Jithma Vithanage">
+                    </div>
                 </div>
             </div>
         </div>
@@ -715,7 +777,7 @@
             </div>
             
             <div class="skills-container">
-                <div class="skill-category">
+                <div class="skill-category animated">
                     <h3>Programming & Frameworks</h3>
                     <div class="skill-item">
                         <div class="skill-name"><i class="fas fa-code"></i> Java (Spring Boot)</div>
@@ -734,7 +796,7 @@
                     </div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category animated delay-1">
                     <h3>Tools & Technologies</h3>
                     <div class="skill-item">
                         <div class="skill-name"><i class="fab fa-aws"></i> AWS S3/Docker</div>
@@ -750,7 +812,7 @@
                     </div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category animated delay-2">
                     <h3>Professional Skills</h3>
                     <div class="skill-item">
                         <div class="skill-name"><i class="fas fa-users"></i> Client Collaboration</div>
@@ -791,7 +853,7 @@
             
             <div class="timeline">
                 <!-- Experience 1 -->
-                <div class="timeline-item left">
+                <div class="timeline-item left animated">
                     <div class="timeline-content">
                         <h4>Software Engineer</h4>
                         <span class="date">United Software Solutions</span>
@@ -804,7 +866,7 @@
                 </div>
                 
                 <!-- Experience 2 -->
-                <div class="timeline-item right">
+                <div class="timeline-item right animated delay-1">
                     <div class="timeline-content">
                         <h4>Associate Software Engineer</h4>
                         <span class="date">Zuse Technologies (Pvt) Ltd</span>
@@ -818,7 +880,7 @@
                 </div>
                 
                 <!-- Experience 3 -->
-                <div class="timeline-item left">
+                <div class="timeline-item left animated delay-2">
                     <div class="timeline-content">
                         <h4>Intern Software Engineer</h4>
                         <span class="date">Databox Technologies (Pvt) Ltd</span>
@@ -830,7 +892,7 @@
                 </div>
                 
                 <!-- Experience 4 -->
-                <div class="timeline-item right">
+                <div class="timeline-item right animated delay-3">
                     <div class="timeline-content">
                         <h4>Intern Software Engineer</h4>
                         <span class="date">SriLanka Telecom PLC</span>
@@ -855,7 +917,7 @@
             
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card animated">
                     <div class="project-header">
                         <h3>Java Inventory System</h3>
                         <div>In Progress</div>
@@ -875,7 +937,7 @@
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card animated delay-1">
                     <div class="project-header">
                         <h3>Restaurant Management System</h3>
                         <div>Completed</div>
@@ -898,7 +960,7 @@
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card animated delay-2">
                     <div class="project-header">
                         <h3>SMART TEA Prediction System</h3>
                         <div>Completed</div>
@@ -933,7 +995,7 @@
             
             <div class="education-container">
                 <!-- Education 1 -->
-                <div class="education-card">
+                <div class="education-card animated">
                     <h3>M.Sc. in Computer Science</h3>
                     <div class="date">2025 - Present</div>
                     <p>University of Sri Jayewardenepura</p>
@@ -946,7 +1008,7 @@
                 </div>
                 
                 <!-- Education 2 -->
-                <div class="education-card">
+                <div class="education-card animated delay-1">
                     <h3>B.Sc. in Information Technology</h3>
                     <div class="date">2020 - 2024</div>
                     <p>Sri Lanka Institute of Information Technology</p>
@@ -972,7 +1034,7 @@
             </div>
             
             <div class="contact-container">
-                <div class="contact-info">
+                <div class="contact-info animated">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -1040,42 +1102,8 @@
     </footer>
 
     <script>
-        // Function to fetch LinkedIn profile image
-        function fetchLinkedInProfileImage() {
-            const profileUrl = 'https://www.linkedin.com/in/jithma-vithanage/';
-            
-            // In a real implementation, you would use the LinkedIn API to get the profile image
-            // This is a placeholder for demonstration purposes
-            const placeholderImage = 'https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80';
-            
-            // For demonstration, we'll use a placeholder
-            // In production, replace this with actual LinkedIn API call
-            document.getElementById('profile-img').src = placeholderImage;
-            
-            /* 
-            // Actual implementation would look something like this:
-            fetch('https://api.linkedin.com/v2/me?projection=(id,profilePicture(displayImage~:playableStreams))', {
-                headers: {
-                    'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                const imageUrl = data.profilePicture['displayImage~'].elements[0].identifiers[0].identifier;
-                document.getElementById('profile-img').src = imageUrl;
-            })
-            .catch(error => {
-                console.error('Error fetching LinkedIn profile image:', error);
-                document.getElementById('profile-img').src = placeholderImage;
-            });
-            */
-        }
-        
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            // Fetch LinkedIn profile image
-            fetchLinkedInProfileImage();
-            
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
@@ -1089,6 +1117,27 @@
             // Mobile menu toggle
             document.querySelector('.mobile-menu').addEventListener('click', function() {
                 document.querySelector('.nav-links').classList.toggle('show');
+            });
+            
+            // Animation on scroll
+            const animatedElements = document.querySelectorAll('.animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
             });
         });
     </script>
